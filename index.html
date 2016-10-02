@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Emojer!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Emojer!</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#mission">Mission</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <div class="header-video">
+    <img src="tempbanner.jpeg" 
+    class="header-video__media" 
+    data-video-src="meme" 
+    data-teaser-source="meme" 
+    data-provider="html5"
+    data-video-width="500"
+    data-video-height="281">
+    <!a href="meme.mp4" class="header-video__play-trigger" id="header-video__play-trigger"Play video</a>
+    <!button type="button" class="header-video__close-trigger" id="header-video__close-trigger"Close video</button>
+    <video autoplay="true" loop="loop" muted id="teaser-video" class="teaser-video">
+      <source src="video/Untitled.mp4" type="video/mp4">
+    </video>
+  </div>
+
+
+<div id="parallax" class="jumbotron" style="background-color: grey;">
+    <div class="caption">
+    <br>
+    <br>
+    <br>
+    <span class="border-mini">The pictograph communicator</span>
+    </div>
+</div>
+
+
+
+
+<div id="mission" class="container-fluid">
+  <div class="container text-center">
+    <div class="row">
+    <div class="col-sm-4">
+      <img src="img/medium.jpg"><br>
+    </div>
+    <div class="col-sm-8">
+      <h2>See the future in action</h2><br>
+      <p style="font-size: 20px;"><strong>Historically,</strong> people communicate best when given a limited amount of words...</p>
+      <p style="font-size: 20px;">It's <strong>challenging,</strong> <strong>fun,</strong> and gets your point <strong>accross!</strong></p><br>
+      <p style="font-size: 20px;"><strong>VISION:</strong> This could be the next TWITTER or <a href="http://www.businessinsider.com/silicon-valley-built-bro-app-2015-4">BRO</a></p><br>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+
+<div id="demo" class="container-fluid">
+  <div class="container text-center">
+      <h1>Try it out!</h1><br>
+      <h3>If any generous donors would offer to fund Emojer $100, it could be available to YOU on the app store!</h3>
+  </div>
+</div>
+
+
+
+<footer class="container-fluid text-center" style="background-color: rgb(140, 140, 140);">
+  <br>
+  <p style="font-size: 12px;">Copyright pending. Emojer TM.<br>Photo Credit to Yash Jain<br>Made with love by Manas Purohit and Ciarra Peters</p>
+</footer>
+
+  
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/modernizr.js"></script>
+<script src="js/script.js?v1.1"></script>
+<script>
+  $(document).ready(function() {
+    $('.header-video').each(function(i, elem) {
+        headerVideo = new HeaderVideo({
+          element: elem,
+          media: '.header-video__media',
+          playTrigger: '.header-video__play-trigger',
+          closeTrigger: '.header-video__close-trigger'
+        });
+    });
+  });
+
+
+//animate slides!!!!
+  $(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+</body>
+</html>
