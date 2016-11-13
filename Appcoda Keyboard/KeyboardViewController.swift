@@ -1,11 +1,3 @@
-//
-//  KeyboardViewController.swift
-//  Appcoda Keyboard
-//
-//  Created by Joyce Echessa on 10/27/14.
-//  Copyright (c) 2014 Appcoda. All rights reserved.
-//
-
 import UIKit
 
 class KeyboardViewController: UIInputViewController {
